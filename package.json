@@ -46,7 +46,8 @@
     "replace-ext": "*",
     "require-dot-file": "*",
     "run-sequence": "*",
-    "yamljs": "*"
+    "yamljs": "*",
+    "gulp-gzip": "*"
   },
   "dependencies": {
     "better-console": "*",
@@ -84,7 +85,8 @@
     "replace-ext": "^1.0.0",
     "run-sequence": "^2.2.1",
     "wrench-sui": "^0.0.3",
-    "yamljs": "^0.3.0"
+    "yamljs": "^0.3.0",
+    "gulp-gzip": "1.2.0"
   },
   "devDependencies": {
     "github": "*",

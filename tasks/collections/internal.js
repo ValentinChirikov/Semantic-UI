@@ -10,6 +10,9 @@
 module.exports = function(gulp) {
 
   var
+
+    //Gzip
+    gzip       = require('gulp-gzip');
     // node dependencies
     fs         = require('fs'),
     chmod      = require('gulp-chmod'),
@@ -73,6 +76,8 @@ module.exports = function(gulp) {
         .pipe(minifyCSS(settings.concatMinify))
         .pipe(header(banner, settings.header))
         .pipe(gulp.dest(output.packaged))
+        .pipe(gzip())
+        .pipe(gulp.dest(output.packaged))
         .pipe(print(log.created))
     ;
   });
@@ -100,9 +105,12 @@ module.exports = function(gulp) {
         .pipe(header(banner, settings.header))
         .pipe(gulpif(config.hasPermission, chmod(config.permission)))
         .pipe(gulp.dest(output.packaged))
+        .pipe(gzip())
+        .pipe(gulp.dest(output.packaged))
         .pipe(print(log.created))
     ;
   });
+
 
   /*--------------
         RTL
